@@ -80,17 +80,10 @@ export default class CreatePosts extends Component {
                 .then(res => console.log(res.data));
                 window.location = '/';
             } else {
-                console.log('The post was unable to be added'); 
+                console.log("Adding the post has failed"); 
             }
         })
-
-        this.setState({
-            username: '',
-            password: '',
-            content: ''
-        })
     }
-
 
     render() {
         return (
@@ -136,8 +129,8 @@ export default class CreatePosts extends Component {
                             Context:
                             </label>
                             <textarea type="text"
-                            maxLength = '300'
                             required
+                            maxLength = '280'
                             className="form-control"
                             value={this.state.context}
                             onChange={this.onChangeContext}
