@@ -141,7 +141,7 @@ export default class CreatePosts extends Component {
                             className="form-control"
                             value={this.state.context}
                             onChange={this.onChangeContext}
-                            placeholder = "Post by typing a text here. (Max 300 characters)"
+                            placeholder = "Post by typing a text here. (Max 280 characters)"
                             />
                         </div>
                         <div className="form-group">
