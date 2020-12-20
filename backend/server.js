@@ -1,16 +1,17 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //mongoose helps connecting to MongoDB
 
 require('dotenv').config();
 
 // creating an Express-server
 const app = express(); 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
+//Creating the connection to mongodb
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true}
 );

@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 
-import axios from 'axios';
+import axios from 'axios'; //importing axios for adding users to database
 
 
 export default class CreateUser extends Component {
-
+    //react component constructor
     constructor(props) {
         super(props);
 
+        //binding the methods to refer to this exact class
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
+        //setting the component state
         this.state = {
             username: '',
             password: '',
@@ -19,13 +21,14 @@ export default class CreateUser extends Component {
 
     }
 
-
+    //method for setting username state
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
         });
     }
 
+    //method for setting password state
     onChangePassword(e) {
         this.setState({
             password: e.target.value
@@ -33,11 +36,11 @@ export default class CreateUser extends Component {
     }
 
 
-
+    //method for handling the submit button press
     onSubmit(e) {
         e.preventDefault();
 
-
+        //input of the user
         const user = {
             username: this.state.username,
             password: this.state.password
@@ -45,15 +48,16 @@ export default class CreateUser extends Component {
 
         console.log(user);
 
+        //sending http post request to add new user to database
         axios.post('http://localhost:5000/users/add', user)
             .then(res => console.log(res.data));
 
-
+        //once the the user is added to database, user is thrown to the front page
         window.location = '/'; 
         }
     
 
-
+    //renders the create new user component page
     render() {
         return (
             <div>

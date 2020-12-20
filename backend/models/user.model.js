@@ -8,7 +8,8 @@ const userSchema = new Schema({
         required : true, 
         unique : true, 
         trim : true, 
-        minlength : 4
+        minlength : 4,
+        maxlength : 20
     },
     
     password: {

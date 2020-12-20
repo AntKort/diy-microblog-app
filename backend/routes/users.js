@@ -9,6 +9,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err)); //returns error message
 });
 
+//route for adding new users
 router.route('/add').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
@@ -19,5 +20,5 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('User added!')) //returning success message
         .catch(err => res.status(400).json('Error: ' + err)); //returning error message
 });
-
+//the router is exported
 module.exports = router;

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; //allows the linkage to different component routes
 
-export default class Navbar extends Component {
+//class navbar is used for rendering a navigation bar by the help of bootstrap
+//components are linked to navigation bar components via the route url
+export default class Navbar extends Component { 
 
   render() {
     return (
